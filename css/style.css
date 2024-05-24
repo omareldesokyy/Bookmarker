@@ -1,0 +1,135 @@
+/*#region Root */
+:root{
+    --mainFont: "Prompt", sans-serif;
+    --secFont: "Caveat", sans-serif;
+    --editColor:rgba(0, 100, 0, 0.5);
+    --removeColor:rgba(130, 0, 0, 0.5);
+}
+/*#endregion Root */
+
+/*#region background Section */
+.bg{
+    width: 100%;
+    min-height: 100vh;
+    max-height: fit-content;
+}
+/*#endregion background Section */
+
+/*#region Color Section */
+.form-control-color{
+    padding: 2px;
+}
+#exampleColorInput1{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#exampleColorInput2{
+    position: absolute;
+    top: 10px;
+    right: 70px;
+}
+/*#endregion Color Section */
+
+/*#region Search Section */
+#searchText{
+    border: none;
+    width: 400px;
+}
+
+#searchText:focus{
+    outline: none;
+}
+
+#startSearch{
+    cursor: pointer;
+    width: 20px;
+}
+/*#endregion Search Section */
+
+/*#region Slogan Section */
+.slogan{
+    background-image: url(../imgs/brush.png);
+    background-position: center;
+    background-size: 75%;
+    background-repeat: no-repeat;
+    padding: 35px;
+    transition: all .5s;
+    cursor: pointer;
+}
+
+.slogan:hover{
+
+    background-size: 90%;
+}
+
+.slogan h1{
+    font-family: var(--mainFont);
+    margin: 0;
+    padding-top: 10;
+    font-weight: 700;
+}
+
+.slogan p{
+    font-family: var(--secFont);
+    color: white;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+}
+/*#endregion Slogan Section */
+
+/*#region Bookmarks Section */
+.btn-group{
+    height: 50px;
+    width: 75%;
+}
+
+.btn-group button{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+.dropdown-menu{
+    min-width: 10px;
+}
+
+.dropdown-item{
+    font-family: "Prompt", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.dropdown-item.edit:hover{
+    background-color: var(--editColor)
+}
+
+.dropdown-item.remove:hover{
+    background-color: var(--removeColor)
+}
+
+.dropdown-toggle::after {
+    border: 0;
+}
+
+.btn:hover {
+    color:white
+}
+/*#endregion Bookmarks Section */
+
+/*#region Add New Section */
+#alert1,#alert2{
+    font-size: 13px;
+}
+.accordion-body label{
+    font-size: 13px;
+}
+.accordion-button:focus {
+    box-shadow: none;
+}
+/*#endregion Add New Section */
+
+

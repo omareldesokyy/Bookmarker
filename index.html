@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="imgs/saved.png">
+    <title>Bookmarks</title>
+</head>
+
+<body id="body" class="position-relative d-flex flex-column justify-content-center align-items-center ">
+
+    <!-- Color Pickers -->
+    <div class="colorPickers">
+        <input type="color" class="form-control form-control-color" id="exampleColorInput1" value="#264554"
+            title="Choose your color">
+        <input type="color" class="form-control form-control-color" id="exampleColorInput2" value="#c67b7b"
+            title="Choose your color">
+    </div>
+
+    <!-- Color Pickers -->
+    <div class="slogan">
+        <h1 class="text-white">BOOKMARKER</h1>
+        <p>Save it for tommorw</p>
+    </div>
+
+
+    <div class="bg position-relative d-flex flex-column gap-4 justify-content-center align-items-center">
+
+        <!-- Search Bar -->
+        <div class="searchBar z-1 bg-white px-3 py-2 rounded-pill shadow d-flex">
+            <input required placeholder="Search in google..." id="searchText" type="text">
+            <a id="startSearch" onclick="searchInGoogle()">
+                <img class="w-100" src="imgs/google-search-icon.png" alt="Search In Google Image">
+            </a>
+        </div>
+        <!-- Search Bar -->
+
+        <!-- Add Bookmark -->
+        <div class="accordion mt-3 z-2" id="accordionExample">
+            <div class="accordion-item">
+
+                <!-- Accordion Header -->
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button gap-5 collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <h6 class="m-0">Add New Bookmark</h6>
+                    </button>
+                </h2>
+                <!-- Accordion Header -->
+
+
+                <!-- Accordion Body -->
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body ">
+                        <form class="form-floating mb-3">
+                            <input type="url" class="form-control" id="floatingInput1" placeholder="www.google.com">
+                            <label id="urlText" for="floatingInput1"><i class="fa-solid fa-link"></i> URL</label>
+                            <div id="alert1" class="d-none mt-3 alert alert-danger" role="alert">
+                                <p class="m-0">Url is Invalid</p>
+                                <ul class="m-0 p-0 list-unstyled">
+                                    <li>-Start with https://</li>
+                                    <li>-End with Domain Extension</li>
+                                    <li>-Ex: https://www.google.com/ </li>
+                                </ul>
+                            </div>
+                        </form>
+
+                        <form class="form-floating">
+                            <input type="text" class="form-control" id="floatingInput2" placeholder="Name">
+                            <label for="floatingInput2"> <i class="fa-solid fa-bookmark"></i> Name</label>
+                            <div id="alert2" class="d-none mt-3 alert alert-danger" role="alert">
+                                <p class="m-0">Name must be more than 3 charachters</p>
+                            </div>
+                        </form>
+
+                        <button id="addBtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                            class="mt-2 btn btn-outline-primary">Add</button>
+                        <button id="updateBtn" onclick="confirmUpdates()"
+                            class="mt-2 d-none btn btn-outline-success">Update Bookmark</button>
+                    </div>
+                </div>
+                <!-- Accordion Body -->
+
+            </div>
+        </div>
+        <!-- Add Bookmark -->
+
+        <!-- Bookmarks -->
+        <div class="container text-center">
+            <div class="row bookmarksArea g-4 w-100 mt-3">
+            </div>
+        </div>
+        <!-- Bookmarks -->
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="staticBackdropLabel">Warning <i class="fa-solid fa-triangle-exclamation text-warning"></i> </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="m-0 fw-bold">Please fill the inputs with the required instructions</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-warning fw-bold" data-bs-dismiss="modal">OKay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+
+
+    <script src="js/script.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
