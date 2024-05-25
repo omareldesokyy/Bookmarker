@@ -36,6 +36,7 @@
 #searchText{
     border: none;
     width: 300px;
+    background-color: transparent;
 }
 
 #searchText:focus{
